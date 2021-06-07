@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private Transform nozzleTransform;
-    [SerializeField] private GameObject bulletObject;
+    [SerializeField] private GameObject m_bullet;
 
     void Update()
     {
@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
 
     void BulletCreate()
     {
-        GameObject bullet = Instantiate(bulletObject, nozzleTransform.position, nozzleTransform.rotation);
+        GameObject bullet = Instantiate(m_bullet, nozzleTransform.position, nozzleTransform.rotation);
         bullet.transform.SetParent(this.transform);
     }
 }
