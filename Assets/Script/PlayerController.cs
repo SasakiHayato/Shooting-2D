@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform nozzleTransform;
     [SerializeField] private GameObject m_bullet;
 
+    [SerializeField] private float hp = 0;
+
     void Update()
     {
         Move();
@@ -28,5 +30,14 @@ public class PlayerController : MonoBehaviour
     {
         GameObject bullet = Instantiate(m_bullet, nozzleTransform.position, nozzleTransform.rotation);
         bullet.transform.SetParent(this.transform);
+    }
+
+    public void Damage()
+    {
+        hp--;
+        if (hp == 0)
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

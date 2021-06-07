@@ -63,10 +63,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\BossController.cs" />
-    <Compile Include="Assets\EnemyBulletController.cs" />
+    <Compile Include="Assets\Script\BossController.cs" />
     <Compile Include="Assets\Script\BulletController.cs" />
+    <Compile Include="Assets\Script\EnemyBulletController.cs" />
     <Compile Include="Assets\Script\EnemyController.cs" />
+    <Compile Include="Assets\Script\EnemyCreateController.cs" />
+    <Compile Include="Assets\Script\EnemyManager.cs" />
     <Compile Include="Assets\Script\PlayerController.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.26f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

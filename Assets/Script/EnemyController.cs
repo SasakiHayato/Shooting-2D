@@ -8,8 +8,15 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private GameObject m_bullet;
 
     private float timer = 0;
+    private float y = 0;
+    void Start()
+    {
+        y = Random.Range(-0.2f, -0.05f);
+    }
+
     void Update()
     {
+        transform.Translate(0, y / 8, 0);
         timer += Time.deltaTime;
         if (timer > 1)
         {
@@ -22,5 +29,13 @@ public class EnemyController : MonoBehaviour
     {
         GameObject bullet = Instantiate(m_bullet, nozzleTransform.transform.position, nozzleTransform.transform.rotation);
         bullet.transform.SetParent(this.transform);
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Field"))
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

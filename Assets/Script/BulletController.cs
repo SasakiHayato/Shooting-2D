@@ -10,17 +10,21 @@ public class BulletController : MonoBehaviour
         transform.Translate(0, speed / 8, 0);
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Field"))
+        EnemyManager enemy;
+        if (collision.gameObject.CompareTag("Enemy"))
         {
+            enemy = collision.GetComponent<EnemyManager>();
+            enemy.Damage();
+
             Destroy(this.gameObject);
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Field"))
         {
             Destroy(this.gameObject);
         }
