@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: -1
+  player: {fileID: 3847474345788315518, guid: 73ccb96260e20974eaaf32f330f16ee8, type: 3}
 --- !u!50 &7843143573108846160
 Rigidbody2D:
   serializedVersion: 4
@@ -128,7 +129,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

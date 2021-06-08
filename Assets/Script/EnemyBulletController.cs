@@ -5,9 +5,18 @@ using UnityEngine;
 public class EnemyBulletController : MonoBehaviour
 {
     [SerializeField] private float speed = 0;
+    [SerializeField] private GameObject player;
+
+    Vector2 vector;
+    void Start()
+    {
+        player = GameObject.Find("Player");
+        vector = player.transform.position - transform.position;
+    }
+
     void Update()
     {
-        transform.Translate(0, speed / 8, 0);
+        transform.Translate(vector * Time.deltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
