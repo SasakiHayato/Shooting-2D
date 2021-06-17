@@ -95,3 +95,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.15
+  bulletPrefab: {fileID: 8973696007737600440, guid: b33e923e068727448bfc8eb72f05a4ee,
+    type: 3}
+  angle: 10
+  degree: 360
+  bulletSpeed: 9

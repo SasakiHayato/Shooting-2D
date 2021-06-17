@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform nozzleTransform;
     [SerializeField] private GameObject m_bullet;
 
-    [SerializeField] private float hp = 0;
+    [SerializeField] public float hp = 0;
 
     void Update()
     {
