@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnemyBulletController : MonoBehaviour
 {
-    [SerializeField] private float speed = 0;
     [SerializeField] private GameObject player;
 
     Vector2 vector;

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
-    private float hp = 2;
+    [SerializeField] private float hp = 0;
     public void Damage()
     {
         hp--;

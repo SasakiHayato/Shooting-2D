@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Script\BossController.cs" />
+    <Compile Include="Assets\Script\BossbulletController.cs" />
     <Compile Include="Assets\Script\BulletController.cs" />
     <Compile Include="Assets\Script\EnemyBulletController.cs" />
     <Compile Include="Assets\Script\EnemyController.cs" />

@@ -8,15 +8,15 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private GameObject m_bullet;
 
     private float timer = 0;
-    private float y = 0;
+    private float vectorY = 0;
     void Start()
     {
-        y = Random.Range(-0.2f, -0.05f);
+        vectorY = Random.Range(-0.2f, -0.05f);
     }
 
     void Update()
     {
-        transform.Translate(0, y / 8, 0);
+        transform.Translate(0, vectorY / 8, 0);
         timer += Time.deltaTime;
         if (timer > 1)
         {
