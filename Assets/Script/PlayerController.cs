@@ -9,6 +9,12 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] public float hp = 0;
 
+    GameManager manager;
+    void Start()
+    {
+        manager = FindObjectOfType<GameManager>();
+    }
+
     void Update()
     {
         Move();
@@ -37,6 +43,7 @@ public class PlayerController : MonoBehaviour
         hp--;
         if (hp == 0)
         {
+            manager.isPley = false;
             Destroy(this.gameObject);
         }
     }

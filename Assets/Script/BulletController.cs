@@ -5,6 +5,12 @@ using UnityEngine;
 public class BulletController : MonoBehaviour
 {
     [SerializeField] private float speed = 0;
+    
+    void Start()
+    {
+        
+    }
+
     void Update()
     {
         transform.Translate(0, speed / 8, 0);

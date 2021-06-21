@@ -16,12 +16,7 @@ public class BossController : MonoBehaviour
     private float theta;
     [SerializeField] float bulletSpeed;
     private float pi = Mathf.PI;
-    private void Start()
-    {
-        
-
-    }
-
+    
     void Update()
     {
         Move();

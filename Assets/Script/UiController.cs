@@ -9,14 +9,19 @@ public class UiController : MonoBehaviour
     [SerializeField] private Text timeText;
     [SerializeField] private Text scoreText;
 
+    [SerializeField] private GameObject rezult;
+
     PlayerController player;
+    GameManager manager;
     
     private float timer = 60;
     void Start()
     {
         GameObject game = GameObject.Find("Player");
         player = game.GetComponent<PlayerController>();
-        
+        manager = FindObjectOfType<GameManager>();
+
+        rezult.SetActive(false);
     }
 
     void Update()
@@ -27,7 +32,13 @@ public class UiController : MonoBehaviour
         timeText.text = timer.ToString("Time: " + "00");
 
         scoreText.text = score.ToString("Score: " + "0000");
+
+        if (!manager.isPley)
+        {
+            rezult.SetActive(true);
+        }
     }
+
     private int score = 0;
     public void ScoreCheck()
     {

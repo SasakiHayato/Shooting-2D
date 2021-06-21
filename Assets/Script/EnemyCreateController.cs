@@ -7,16 +7,20 @@ public class EnemyCreateController : MonoBehaviour
     [SerializeField] private GameObject enemy;
     [SerializeField] private GameObject boss;
 
+    GameManager manager;
+
     private float timer = 0;
     private float bossTimer = 0;
 
     Vector2 vector;
     void Start()
     {
+        manager = FindObjectOfType<GameManager>();
         vector = new Vector2(0, 3.5f);
     }
     void Update()
     {
+        if (!manager.isPley) return;
         timer += Time.deltaTime;
         bossTimer += Time.deltaTime;
         if (timer > 1.5)
