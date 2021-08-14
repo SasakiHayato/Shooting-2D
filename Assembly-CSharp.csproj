@@ -63,7 +63,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\BulletClass.cs" />
     <Compile Include="Assets\MuzzleMove.cs" />
+    <Compile Include="Assets\PlayerController2.cs" />
     <Compile Include="Assets\PlayerMove.cs" />
     <Compile Include="Assets\Script\BossController.cs" />
     <Compile Include="Assets\Script\BossbulletController.cs" />

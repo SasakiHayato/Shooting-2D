@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class MuzzleMove : MonoBehaviour
 {
-    [SerializeField] float m_distans = 0;
+    private float m_dirX, m_dirY;
+
     void Update()
     {
         Transform playerPos = transform.root;
 
-        float h = Input.GetAxisRaw("R_Horizontal");
-        float v = Input.GetAxisRaw("R_Vertical") * -1;
+        m_dirX = Input.GetAxisRaw("R_Horizontal");
+        m_dirY = Input.GetAxisRaw("R_Vertical") * -1;
         
-        if (h != 0 || v != 0)
+        if (m_dirX != 0 || m_dirY != 0)
         {
-            Dir(h, v, playerPos);
+            Dir(m_dirX, m_dirY, playerPos);
         }
         else
         {
@@ -27,6 +28,12 @@ public class MuzzleMove : MonoBehaviour
         float x = playerPos.position.x + h;
         float y = playerPos.position.y + v;
 
-        transform.position = new Vector2(x, y) * m_distans;
+        transform.position = new Vector2(x, y);
     }
+
+    public float DirX() { return m_dirX; }
+    
+
+    public float DirY() { return m_dirY; }
+
 }
