@@ -2,11 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum ParentEnum
+{
+    Player,
+    Enemy,
+}
+
 public class BulletClass : MonoBehaviour
 {
+    [SerializeField] ParentEnum m_parent;
     [SerializeField] float m_shotPower = 0;
     float m_desTime = 1;
 
+    /// <summary> Bullet Set </summary>
+    
+    /// <param name="x">dirX</param>
+    /// <param name="y">dirY</param>
     public void Set(Transform parent, float x, float y)
     {
         GameObject bullet = Instantiate(gameObject, parent.transform.position, Quaternion.identity);
@@ -26,5 +37,10 @@ public class BulletClass : MonoBehaviour
     {
         m_desTime -= Time.deltaTime;
         if (m_desTime < 0) { Destroy(gameObject); }
+    }
+
+    public ParentEnum RetuneEnum()
+    {
+        return m_parent;
     }
 }
