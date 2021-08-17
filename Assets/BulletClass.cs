@@ -8,11 +8,13 @@ public enum ParentEnum
     Enemy,
 }
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class BulletClass : MonoBehaviour
 {
     [SerializeField] ParentEnum m_parent;
     [SerializeField] float m_shotPower = 0;
-    float m_desTime = 1;
+
+    float m_desTimeForPlayer = 0;
 
     /// <summary> Bullet Set </summary>
     
@@ -25,6 +27,18 @@ public class BulletClass : MonoBehaviour
         Shot(bullet, x, y);
     }
 
+    void Update()
+    {
+        if (m_parent == ParentEnum.Player)
+        {
+            m_desTimeForPlayer += Time.deltaTime;
+            if (m_desTimeForPlayer > 1)
+            {
+                Destroy(gameObject);
+            }
+        }
+    }
+
     private void Shot(GameObject bullet, float x, float y)
     {
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
@@ -33,22 +47,24 @@ public class BulletClass : MonoBehaviour
         rb.AddForce(force * m_shotPower, ForceMode2D.Impulse);
     }
 
-    private void Update()
-    {
-        m_desTime -= Time.deltaTime;
-        if (m_desTime < 0) { Destroy(gameObject); }
-    }
-
     public ParentEnum RetuneEnum()
     {
         return m_parent;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Field"))
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Field"))
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 }

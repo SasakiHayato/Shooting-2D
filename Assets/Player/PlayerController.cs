@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController2 : PlayerManager2
+public class PlayerController : PlayerManager2
 {
     [SerializeField] BulletClass m_bullet;
     MuzzleMove m_muzzle;

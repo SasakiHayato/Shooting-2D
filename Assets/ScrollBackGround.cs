@@ -28,7 +28,7 @@ public class ScrollBackGround : MonoBehaviour
         }
         if (m_clone.transform.position.y < m_posY - m_clone.bounds.size.y)
         {
-            m_clone.transform.Translate(0, m_renderer.bounds.size.y, 0);
+            m_clone.transform.Translate(0, m_clone.bounds.size.y * 2, 0);
         }
     }
 }
