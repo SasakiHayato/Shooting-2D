@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController2 : MonoBehaviour
+public class PlayerController2 : PlayerManager2
 {
     [SerializeField] BulletClass m_bullet;
     MuzzleMove m_muzzle;
@@ -18,6 +18,16 @@ public class PlayerController2 : MonoBehaviour
         {
             if (m_muzzle.DirX() == 0 && m_muzzle.DirY() == 0) return;
             m_bullet.Set(transform.GetChild(0), m_muzzle.DirX(), m_muzzle.DirY());
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        BulletClass bullet = collision.GetComponent<BulletClass>();
+        if (bullet == null) return;
+        if (bullet.RetuneEnum() == ParentEnum.Enemy)
+        {
+            GetDamage();
         }
     }
 }

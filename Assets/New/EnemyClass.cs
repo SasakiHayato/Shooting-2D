@@ -13,6 +13,7 @@ public class EnemyClass : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         BulletClass bullet = collision.GetComponent<BulletClass>();
+        if (bullet == null) return;
         if (bullet.RetuneEnum() == ParentEnum.Player)
         {
             GetDamage();
