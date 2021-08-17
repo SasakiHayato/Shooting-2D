@@ -63,12 +63,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\BulletClass.cs" />
-    <Compile Include="Assets\EnemyClass.cs" />
-    <Compile Include="Assets\EnemyManager2.cs" />
-    <Compile Include="Assets\MuzzleMove.cs" />
-    <Compile Include="Assets\PlayerController2.cs" />
-    <Compile Include="Assets\PlayerMove.cs" />
+    <Compile Include="Assets\New\BulletClass.cs" />
+    <Compile Include="Assets\New\EnemyClass.cs" />
+    <Compile Include="Assets\New\EnemyManager2.cs" />
+    <Compile Include="Assets\New\MuzzleMove.cs" />
+    <Compile Include="Assets\New\PlayerController2.cs" />
+    <Compile Include="Assets\New\PlayerMove.cs" />
     <Compile Include="Assets\Script\BossController.cs" />
     <Compile Include="Assets\Script\BossbulletController.cs" />
     <Compile Include="Assets\Script\BulletController.cs" />

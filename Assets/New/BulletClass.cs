@@ -43,4 +43,12 @@ public class BulletClass : MonoBehaviour
     {
         return m_parent;
     }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Field"))
+        {
+            Destroy(this.gameObject);
+        }
+    }
 }

@@ -116,6 +116,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Hp: 0
+  m_enemyManager: {fileID: 876584992533768855, guid: ca095bf1c9e6a0b40a2d51a55ddc787f,
+    type: 3}
+  m_bullet: {fileID: 8082016853848207888, guid: 48a71486c52d5d7488afb17c0074a8e1,
+    type: 3}
+  m_angleToDes: 30
 --- !u!58 &7778478674644651575
 CircleCollider2D:
   m_ObjectHideFlags: 0
