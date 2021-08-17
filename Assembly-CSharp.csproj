@@ -71,16 +71,6 @@
     <Compile Include="Assets\New\PlayerManager2.cs" />
     <Compile Include="Assets\New\PlayerMove.cs" />
     <Compile Include="Assets\New\ScrollBackGround.cs" />
-    <Compile Include="Assets\Script\BossController.cs" />
-    <Compile Include="Assets\Script\BossbulletController.cs" />
-    <Compile Include="Assets\Script\BulletController.cs" />
-    <Compile Include="Assets\Script\EnemyBulletController.cs" />
-    <Compile Include="Assets\Script\EnemyController.cs" />
-    <Compile Include="Assets\Script\EnemyCreateController.cs" />
-    <Compile Include="Assets\Script\EnemyManager.cs" />
-    <Compile Include="Assets\Script\GameManager.cs" />
-    <Compile Include="Assets\Script\PlayerController.cs" />
-    <Compile Include="Assets\Script\UiController.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.26f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
