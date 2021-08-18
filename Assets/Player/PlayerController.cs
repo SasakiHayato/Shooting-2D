@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : PlayerManager2
+public class PlayerController : PlayerManager
 {
     [SerializeField] BulletClass m_bullet;
+    [SerializeField] PlayerSkillClass m_skill;
     MuzzleMove m_muzzle;
 
     void Start()
@@ -18,6 +19,12 @@ public class PlayerController : PlayerManager2
         {
             if (m_muzzle.DirX() == 0 && m_muzzle.DirY() == 0) return;
             m_bullet.Set(transform.GetChild(0), m_muzzle.DirX(), m_muzzle.DirY());
+        }
+
+        if (Input.GetButtonDown("Shot2") && m_chafe.GetChafeScore() > 10)
+        {
+            m_skill.DesEnemyBulletAll();
+            m_chafe.ResetChafeScore();
         }
     }
 

@@ -6,6 +6,8 @@ public enum ParentEnum
 {
     Player,
     Enemy,
+
+    ScoreBullet,
 }
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -13,6 +15,9 @@ public class BulletClass : MonoBehaviour
 {
     [SerializeField] ParentEnum m_parent;
     [SerializeField] float m_shotPower = 0;
+
+    static Transform m_playerPos;
+    Vector2 m_setVec = Vector2.zero;
 
     float m_desTimeForPlayer = 0;
 
@@ -27,6 +32,12 @@ public class BulletClass : MonoBehaviour
         Shot(bullet, x, y);
     }
 
+    public Transform FindPlayer(GameObject player)
+    {
+        m_playerPos = player.transform;
+        return m_playerPos;
+    }
+
     void Update()
     {
         if (m_parent == ParentEnum.Player)
@@ -36,6 +47,11 @@ public class BulletClass : MonoBehaviour
             {
                 Destroy(gameObject);
             }
+        }
+        else if (m_parent == ParentEnum.ScoreBullet)
+        {
+            m_setVec = new Vector2(m_playerPos.position.x, m_playerPos.position.y);
+            transform.position = Vector2.MoveTowards(transform.position, m_setVec, m_shotPower * Time.deltaTime);
         }
     }
 
@@ -56,6 +72,13 @@ public class BulletClass : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Field"))
         {
+            Destroy(gameObject);
+        }
+
+        if (collision.gameObject.CompareTag("Player") && m_parent == ParentEnum.ScoreBullet)
+        {
+            ScoreClass score = FindObjectOfType<ScoreClass>();
+            score.AddScore();
             Destroy(gameObject);
         }
     }

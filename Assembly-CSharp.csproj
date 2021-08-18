@@ -66,10 +66,14 @@
     <Compile Include="Assets\BulletClass.cs" />
     <Compile Include="Assets\Enemy\EnemyClass.cs" />
     <Compile Include="Assets\Enemy\EnemyManager2.cs" />
+    <Compile Include="Assets\Player\ChafeClass.cs" />
     <Compile Include="Assets\Player\MuzzleMove.cs" />
     <Compile Include="Assets\Player\PlayerController.cs" />
-    <Compile Include="Assets\Player\PlayerManager2.cs" />
+    <Compile Include="Assets\Player\PlayerManager.cs" />
     <Compile Include="Assets\Player\PlayerMove.cs" />
+    <Compile Include="Assets\Player\PlayerSkillClass.cs" />
+    <Compile Include="Assets\ScoreClass.cs" />
+    <Compile Include="Assets\ScoreManager.cs" />
     <Compile Include="Assets\ScrollBackGround.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.26f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
