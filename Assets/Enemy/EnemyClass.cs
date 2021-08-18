@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyClass : MonoBehaviour
 {
     [SerializeField] int m_Hp = 0;
-    [SerializeField] EnemyManager2 m_enemyManager;
+    [SerializeField] EnemyManager m_enemyManager;
     [SerializeField] BulletClass m_bullet;
 
     [SerializeField, Range(30, 360)] float m_angleToDes = 0;

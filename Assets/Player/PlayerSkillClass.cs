@@ -6,6 +6,9 @@ public class PlayerSkillClass : MonoBehaviour
 {
     [SerializeField] BulletClass m_scoreBullet;
 
+    /// <summary>
+    /// DesEnemyBulletAll, SetScoreBullet, がセット。
+    /// </summary>
     public void DesEnemyBulletAll()
     {
         GameObject[] bulletArray = GameObject.FindGameObjectsWithTag("Enemy");

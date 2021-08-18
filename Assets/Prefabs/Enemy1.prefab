@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -5558913639341659382}
   - component: {fileID: 719469512804845905}
   m_Layer: 8
-  m_Name: Enemy
+  m_Name: Enemy1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -101,7 +101,7 @@ MonoBehaviour:
     type: 3}
   m_bullet: {fileID: 9088223968611945961, guid: 3a83abb53bcf6b64d887553437621b2a,
     type: 3}
-  m_angleToDes: 30
+  m_angleToDes: 45
 --- !u!50 &-5558913639341659382
 Rigidbody2D:
   serializedVersion: 4

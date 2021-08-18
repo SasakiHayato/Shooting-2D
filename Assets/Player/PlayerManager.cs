@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour
 {
     [SerializeField] int m_hp;
-    [SerializeField] public ChafeClass m_chafe;
 
     public void GetDamage()
     {
