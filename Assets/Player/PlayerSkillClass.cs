@@ -8,6 +8,7 @@ public class PlayerSkillClass : MonoBehaviour
 
     /// <summary>
     /// DesEnemyBulletAll, SetScoreBullet, がセット。
+    /// 呼び出しは、DesEnemyBulletAll();
     /// </summary>
     public void DesEnemyBulletAll()
     {

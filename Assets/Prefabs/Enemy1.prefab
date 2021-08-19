@@ -143,9 +143,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11644ccdeb93ea54fa66faf4b675808b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_hp: 0
+  m_hp: 15
   m_enemyManager: {fileID: 876584992533768855, guid: ca095bf1c9e6a0b40a2d51a55ddc787f,
     type: 3}
+  m_scoreBullet: {fileID: -6659249687150126976, guid: 2dd7a990d71788c40ad90a1e35da7075,
+    type: 3}
+  m_angleToDes: 45
   m_bullet: {fileID: 9088223968611945961, guid: 3a83abb53bcf6b64d887553437621b2a,
     type: 3}
-  m_angleToDes: 30

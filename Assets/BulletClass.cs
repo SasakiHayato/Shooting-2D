@@ -58,6 +58,7 @@ public class BulletClass : MonoBehaviour
         }
         else if (m_parent == ParentEnum.ScoreBullet)
         {
+            if (m_playerPos == null) return;
             m_setVec = new Vector2(m_playerPos.position.x, m_playerPos.position.y);
             transform.position = Vector2.MoveTowards(transform.position, m_setVec, m_shotPower * Time.deltaTime);
         }
@@ -65,6 +66,12 @@ public class BulletClass : MonoBehaviour
 
     public ParentEnum RetuneEnum()
     {
+        return m_parent;
+    }
+
+    public ParentEnum SetEnum(ParentEnum parent)
+    {
+        m_parent = parent;
         return m_parent;
     }
 

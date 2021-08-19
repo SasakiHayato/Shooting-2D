@@ -6,7 +6,7 @@ using UnityEngine;
 public class StraightEnemy : EnemyBase
 {
     Rigidbody2D m_rb;
-    
+    [SerializeField] BulletClass m_bullet;
     void Start()
     {
         m_rb = GetComponent<Rigidbody2D>();

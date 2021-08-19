@@ -6,7 +6,8 @@ public abstract class EnemyBase : MonoBehaviour
 {
     [SerializeField] int m_hp;
     [SerializeField] EnemyManager m_enemyManager;
-    [SerializeField] public BulletClass m_bullet;
+    [SerializeField] BulletClass m_scoreBullet;
+
     [SerializeField, Range(30, 360)] float m_angleToDes = 0;
 
     float m_intervalTime = 0;
@@ -60,9 +61,16 @@ public abstract class EnemyBase : MonoBehaviour
         {
             float rad = angle * Mathf.Deg2Rad;
             Vector2 dir = new Vector2(Mathf.Sin(rad), Mathf.Cos(rad));
-
-            m_bullet.Set(gameObject.transform, dir.x, dir.y);
+            
+            m_scoreBullet.Set(gameObject.transform, dir.x / 5, dir.y / 5);
+            m_scoreBullet.FindPlayer(GameObject.FindGameObjectWithTag("Player"));
         }
+
         Destroy(gameObject);
+    }
+
+    public int RetuneHp()
+    {
+        return m_hp;
     }
 }
