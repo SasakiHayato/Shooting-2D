@@ -3,23 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class EnemyMove : MonoBehaviour
+public class StraightEnemy : EnemyClass
 {
-    private enum EnemyType
-    {
-        Straight,
-    }
-
     Rigidbody2D m_rb;
-
     void Start()
     {
         m_rb = GetComponent<Rigidbody2D>();
-        Straight();
     }
 
-    void Straight()
+    void Update()
     {
-        m_rb.AddForce(new Vector2(0, -7), ForceMode2D.Impulse);
+        
+    }
+
+    public override void AddDamage()
+    {
+        throw new System.NotImplementedException();
     }
 }

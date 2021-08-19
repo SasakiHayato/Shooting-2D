@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyClass : MonoBehaviour
+public abstract class EnemyClass : MonoBehaviour
 {
-    [SerializeField] int m_Hp = 0;
+    [SerializeField] int m_hp;
     [SerializeField] EnemyManager m_enemyManager;
     [SerializeField] BulletClass m_bullet;
-
     [SerializeField, Range(30, 360)] float m_angleToDes = 0;
+
+    public abstract void AddDamage();
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -23,9 +24,9 @@ public class EnemyClass : MonoBehaviour
 
     void GetDamage()
     {
-        m_Hp--;
+        m_hp--;
 
-        if (m_Hp < 0)
+        if (m_hp < 0)
         {
             m_enemyManager.RemoveEnemy(this.gameObject);
             DesThis();

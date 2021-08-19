@@ -33,7 +33,7 @@ public class ChafeClass : MonoBehaviour
 
     void MeterControl(int score)
     {
-        m_meterImage.fillAmount = (float)score / 100;
+        m_meterImage.fillAmount = ((float)score / 100) * 2;
     }
 
     public int GetChafeScore()

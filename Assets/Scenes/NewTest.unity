@@ -556,8 +556,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 594301899}
-  - component: {fileID: 594301900}
   - component: {fileID: 594301901}
+  - component: {fileID: 594301900}
   m_Layer: 11
   m_Name: Chafe
   m_TagString: Untagged
@@ -592,7 +592,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ec5584d1398d3c4fb9aded77e8a6417, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_setChafe: 20
+  m_setChafe: 50
   m_meterImage: {fileID: 1584416294}
 --- !u!58 &594301901
 CircleCollider2D:
@@ -939,7 +939,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 104e93f5cf1426548aa62e2f04557f4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_speed: 10
+  m_speed: 12
 --- !u!50 &1258625226
 Rigidbody2D:
   serializedVersion: 4

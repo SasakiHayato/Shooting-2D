@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6576702903281258292}
   - component: {fileID: 5292608595286637747}
-  - component: {fileID: 3110286751772142252}
   - component: {fileID: -5558913639341659382}
   - component: {fileID: 719469512804845905}
+  - component: {fileID: 8180745053909740401}
   m_Layer: 8
   m_Name: Enemy1
   m_TagString: Untagged
@@ -84,24 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3110286751772142252
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2607386020420678672}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49cebee1455ce4d4e93039bb35b0965b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Hp: 0
-  m_enemyManager: {fileID: 876584992533768855, guid: ca095bf1c9e6a0b40a2d51a55ddc787f,
-    type: 3}
-  m_bullet: {fileID: 9088223968611945961, guid: 3a83abb53bcf6b64d887553437621b2a,
-    type: 3}
-  m_angleToDes: 45
 --- !u!50 &-5558913639341659382
 Rigidbody2D:
   serializedVersion: 4
@@ -149,3 +131,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &8180745053909740401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2607386020420678672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11644ccdeb93ea54fa66faf4b675808b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_hp: 0
+  m_enemyManager: {fileID: 876584992533768855, guid: ca095bf1c9e6a0b40a2d51a55ddc787f,
+    type: 3}
+  m_bullet: {fileID: 9088223968611945961, guid: 3a83abb53bcf6b64d887553437621b2a,
+    type: 3}
+  m_angleToDes: 30
