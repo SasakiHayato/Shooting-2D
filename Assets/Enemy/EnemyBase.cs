@@ -2,14 +2,35 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class EnemyClass : MonoBehaviour
+public abstract class EnemyBase : MonoBehaviour
 {
     [SerializeField] int m_hp;
     [SerializeField] EnemyManager m_enemyManager;
-    [SerializeField] BulletClass m_bullet;
+    [SerializeField] public BulletClass m_bullet;
     [SerializeField, Range(30, 360)] float m_angleToDes = 0;
 
-    public abstract void AddDamage();
+    float m_intervalTime = 0;
+    bool m_interval = false;
+
+    public abstract void Shoot();
+    public abstract void Move();
+
+    public bool Interval(float time)
+    {
+        m_intervalTime += Time.deltaTime;
+
+        if (m_intervalTime > time)
+        {
+            m_intervalTime = 0;
+            m_interval = true;
+        }
+        else
+        {
+            m_interval = false;
+        }
+
+        return m_interval;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

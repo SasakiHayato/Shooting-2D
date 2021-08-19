@@ -32,6 +32,14 @@ public class BulletClass : MonoBehaviour
         Shot(bullet, x, y);
     }
 
+    private void Shot(GameObject bullet, float x, float y)
+    {
+        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+        Vector2 force = new Vector2(x, y);
+
+        rb.AddForce(force * m_shotPower, ForceMode2D.Impulse);
+    }
+
     public Transform FindPlayer(GameObject player)
     {
         m_playerPos = player.transform;
@@ -53,14 +61,6 @@ public class BulletClass : MonoBehaviour
             m_setVec = new Vector2(m_playerPos.position.x, m_playerPos.position.y);
             transform.position = Vector2.MoveTowards(transform.position, m_setVec, m_shotPower * Time.deltaTime);
         }
-    }
-
-    private void Shot(GameObject bullet, float x, float y)
-    {
-        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        Vector2 force = new Vector2(x, y);
-        
-        rb.AddForce(force * m_shotPower, ForceMode2D.Impulse);
     }
 
     public ParentEnum RetuneEnum()

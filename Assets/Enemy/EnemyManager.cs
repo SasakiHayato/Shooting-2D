@@ -18,7 +18,7 @@ public class EnemyManager : MonoBehaviour
     static Transform m_getMaxPos;
     static GameObject[] m_getEnemyObs = new GameObject[0];
 
-    void Start()
+    private void Awake()
     {
         GetSet();
         SetEnemys();
@@ -30,6 +30,14 @@ public class EnemyManager : MonoBehaviour
         m_getMinPos = m_setMinPos;
         m_getMaxPos = m_setMaxPos;
         m_getEnemyObs = m_enemyObs;
+    }
+
+    void SetEnemys()
+    {
+        for (int i = 0; i < m_getEnemy; i++)
+        {
+            SetEnemy(i);
+        }
     }
 
     void SetEnemy(int i)
@@ -44,14 +52,6 @@ public class EnemyManager : MonoBehaviour
         enemy.name = $"Enemy{i + 1}";
 
         m_enemyList.Add(enemy);
-    }
-
-    void SetEnemys()
-    {
-        for (int i = 0; i < m_getEnemy; i++)
-        {
-            SetEnemy(i);
-        }
     }
 
     public void RemoveEnemy(GameObject enemy)

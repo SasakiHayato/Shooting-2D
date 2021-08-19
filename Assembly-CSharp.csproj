@@ -64,7 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\BulletClass.cs" />
-    <Compile Include="Assets\Enemy\EnemyClass.cs" />
+    <Compile Include="Assets\Enemy\EnemyBase.cs" />
     <Compile Include="Assets\Enemy\EnemyManager.cs" />
     <Compile Include="Assets\Enemy\StraightEnemy.cs" />
     <Compile Include="Assets\Player\ChafeClass.cs" />
