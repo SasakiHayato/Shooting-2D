@@ -15,6 +15,7 @@ public abstract class EnemyBase : MonoBehaviour
 
     public abstract void Shoot();
     public abstract void Move();
+    public abstract void GetDamage();
 
     public bool Interval(float time)
     {
@@ -44,18 +45,7 @@ public abstract class EnemyBase : MonoBehaviour
         }
     }
 
-    void GetDamage()
-    {
-        m_hp--;
-
-        if (m_hp < 0)
-        {
-            m_enemyManager.RemoveEnemy(this.gameObject);
-            DesThis();
-        }
-    }
-
-    void DesThis()
+    public void DesThis(GameObject enemy)
     {
         for (float angle = 0; angle < 360; angle += m_angleToDes)
         {
@@ -65,12 +55,12 @@ public abstract class EnemyBase : MonoBehaviour
             m_scoreBullet.Set(gameObject.transform, dir.x / 5, dir.y / 5);
             m_scoreBullet.FindPlayer(GameObject.FindGameObjectWithTag("Player"));
         }
-
+        RemoveEnemy(enemy);
         Destroy(gameObject);
     }
 
-    public int RetuneHp()
-    {
-        return m_hp;
-    }
+    void RemoveEnemy(GameObject enemy) { m_enemyManager.RemoveEnemy(enemy); }
+
+    public int RetuneHp() { return m_hp; }
+    public int SetHp(int hp) { return m_hp = hp; } 
 }

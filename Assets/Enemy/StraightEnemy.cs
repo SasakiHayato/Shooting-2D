@@ -15,10 +15,7 @@ public class StraightEnemy : EnemyBase
 
     void Update()
     {
-        if (Interval(0.5f))
-        {
-            Shoot();
-        }
+        if (Interval(0.5f)) { Shoot(); }
     }
 
     public override void Move()
@@ -35,5 +32,14 @@ public class StraightEnemy : EnemyBase
         Vector2 set = player.position - transform.position;
 
         m_bullet.Set(gameObject.transform, set.x / 10, set.y / 10);
+    }
+
+    public override void GetDamage()
+    {
+        int hp = RetuneHp();
+        hp--;
+        SetHp(hp);
+
+        if (RetuneHp() < 0) { DesThis(this.gameObject); }
     }
 }

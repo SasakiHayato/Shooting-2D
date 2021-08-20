@@ -8,32 +8,26 @@ public class BossContoller : EnemyBase
     [SerializeField] Transform[] m_setPosArray = new Transform[0];
     [SerializeField] Transform m_attackPos;
     [SerializeField] BossAttack m_bossAttack;
+    [SerializeField] BossManager m_manager;
 
     bool m_set = false;
-    bool m_startAttack = false;
     bool m_cureantAttack = false;
     Transform m_setPos;
     float m_hpPasent;
-    float m_cureantHp;
 
     void Start()
     {
         m_hpPasent = (float)RetuneHp() / 100;
-        m_cureantHp = m_hpPasent;
     }
 
     void Update()
     {
-        if (Interval(1f))
-        {
-            Shoot();
-        }
+        if (Interval(1f) && !m_manager.AttackPhaseCurreant()) { Shoot(); }
 
-        if (!m_startAttack)
-        {
-            Move();
-        }
-        HpCheck();
+        if (!m_manager.AttackPhaseCurreant()) { Move(); }
+        else { AttackToMove(); }
+
+        if (m_cureantAttack) { m_bossAttack.PhaseOne(); }
     }
 
     public override void Move()
@@ -55,7 +49,6 @@ public class BossContoller : EnemyBase
         }
         
     }
-
     public override void Shoot()
     {
         for (int angle = 0; angle < 360; angle += 20)
@@ -66,26 +59,20 @@ public class BossContoller : EnemyBase
             m_bullet.Set(gameObject.transform, dir.x, dir.y);
         }
     }
+    public override void GetDamage()
+    {
+        int hp = RetuneHp();
+        hp--;
+        SetHp(hp);
+        HpCheck();
+        if (RetuneHp() < 0) { DesThis(this.gameObject); }
+    }
 
     void HpCheck()
     {
-        if (RetuneHp() < m_hpPasent * 80 && !m_bossAttack.PhaseOneCheck())
+        if (RetuneHp() < m_hpPasent * 80 && !m_manager.AttackPhaseCurreant())
         {
-            m_startAttack = true;
-            AttackToMove();
-            if (m_cureantAttack)
-            {
-                m_bossAttack.PhaseOne();
-            }
-        }
-        else if (RetuneHp() < m_cureantHp * 50 && !m_bossAttack.PhaseTowCheck())
-        {
-            m_startAttack = true;
-            AttackToMove();
-            if (m_cureantAttack)
-            {
-                m_bossAttack.PhaseTow();
-            }
+            m_manager.SetAttackPhase(true);
         }
     }
 
@@ -95,9 +82,6 @@ public class BossContoller : EnemyBase
         {
             transform.position = Vector2.MoveTowards(transform.position, m_attackPos.position, Time.deltaTime * 4);
         }
-        else
-        {
-            m_cureantAttack = true;
-        }
+        else { m_cureantAttack = true; }
     }
 }

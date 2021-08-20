@@ -4,34 +4,15 @@ using UnityEngine;
 
 public class BossAttack : MonoBehaviour
 {
-    bool m_attackCreant = false;
-
-    bool m_phaseOne = false;
-    bool m_phaseTow = false;
-
-    public bool AttackCreant()
-    {
-        return m_attackCreant;
-    }
+    [SerializeField] BulletClass m_bullet;
+    [SerializeField] Transform[] m_setPos = new Transform[0];
 
     public void PhaseOne()
     {
-        if (m_phaseOne) return;
-
-        Debug.Log("a");
-    }
-    public bool PhaseOneCheck()
-    {
-        return m_phaseOne;
-    }
-
-    public void PhaseTow()
-    {
-        if (m_phaseTow) return;
-        Debug.Log("b");
-    }
-    public bool PhaseTowCheck()
-    {
-        return m_phaseOne;
+        for (int set = 0; set < m_setPos.Length; set++)
+        {
+            GameObject bullet = Instantiate(m_bullet.gameObject);
+            bullet.transform.position = m_setPos[set].position;
+        }
     }
 }
