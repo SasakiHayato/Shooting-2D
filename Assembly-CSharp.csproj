@@ -67,6 +67,7 @@
     <Compile Include="Assets\Enemy\BossAttack.cs" />
     <Compile Include="Assets\Enemy\BossContoller.cs" />
     <Compile Include="Assets\Enemy\BossManager.cs" />
+    <Compile Include="Assets\Enemy\CircleEnemy.cs" />
     <Compile Include="Assets\Enemy\EnemyBase.cs" />
     <Compile Include="Assets\Enemy\EnemyManager.cs" />
     <Compile Include="Assets\Enemy\StraightEnemy.cs" />
