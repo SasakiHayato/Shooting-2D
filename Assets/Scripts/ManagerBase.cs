@@ -1,13 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+
+/// <summary>
+/// Manager‚ÌŠî’êƒNƒ‰ƒX
+/// </summary>
 
 public abstract class ManagerBase : MonoBehaviour
 {
-    private void Awake()
+    public static int InstanceID { get; private set; }
+
+    void Awake()
     {
-        GameManager.Instance.SetOnStart(() => SetUp());
+        InstanceID = GetInstanceID();
+
+        GameManager.Instance.SetOnStartAction(GetInstanceID(), () => SetUp());
+        GameManager.Instance.AddMaager(this);
     }
 
     protected abstract void SetUp();
+
+    void OnDestroy()
+    {
+        GameManager.Instance.RemoveManager(this);
+    }
 }
